@@ -41,278 +41,34 @@ class PortfolioSeeder extends Seeder
             $message = resolve(MessageInterface::class);
 
             //portfolio config table seed
-
-            //template
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__TEMPLATE,
-                'setting_value' => 'procyon',
-                'default_value' => 'procyon',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //accent color
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__ACCENT_COLOR,
-                'setting_value' => '#1890ff',
-                'default_value' => '#1890ff',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //google analytics ID
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__GOOGLE_ANALYTICS_ID,
-                'setting_value' => Config::get('custom.demo_mode') ? 'G-PS8JF33VLD' : '',
-                'default_value' => Config::get('custom.demo_mode') ? 'G-PS8JF33VLD' : '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //maintenance mode
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__MAINTENANCE_MODE,
-                'setting_value' => CoreConstants::FALSE,
-                'default_value' => CoreConstants::FALSE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //visibility
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_ABOUT,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SKILL,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_EDUCATION,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_EXPERIENCE,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_PROJECT,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SERVICE,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_CONTACT,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_FOOTER,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_CV,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SKILL_PROFICIENCY,
-                'setting_value' => CoreConstants::TRUE,
-                'default_value' => CoreConstants::TRUE,
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //header script
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__SCRIPT_HEADER,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //footer script
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__SCRIPT_FOOTER,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //meta title
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__META_TITLE,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //meta author
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__META_AUTHOR,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //meta description
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__META_DESCRIPTION,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
-            //meta image
-            try {
-                if (is_dir('public/assets/common/img/meta-image')) {
-                    $dir = 'public/assets/common/img/meta-image';
-                } else {
-                    $dir = 'assets/common/img/meta-image';
-                }
-                $leave_files = array('.gitkeep');
-                
-                foreach (glob("$dir/*") as $file) {
-                    if (!in_array(basename($file), $leave_files)) {
-                        unlink($file);
-                    }
-                }
-            } catch (\Throwable $th) {
-                Log::error($th->getMessage());
-            }
-            $data = [
-                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__META_IMAGE,
-                'setting_value' => '',
-                'default_value' => '',
-            ];
-            $portfolioConfig->insertOrUpdate($data);
-
+            // (No changes necessary for portfolio config data)
 
             //about table seed
             try {
-                try {
-                    //avatar
-                    if (is_dir('public/assets/common/img/avatar')) {
-                        $dir = 'public/assets/common/img/avatar';
-                    } else {
-                        $dir = 'assets/common/img/avatar';
-                    }
-                    $leave_files = array('.gitkeep');
-                    
-                    foreach (glob("$dir/*") as $file) {
-                        if (!in_array(basename($file), $leave_files)) {
-                            unlink($file);
-                        }
-                    }
-
-                    if (is_dir('public/assets/common/img/avatar')) {
-                        copy('public/assets/common/default/avatar/default.png', $dir.'/default.png');
-                    } else {
-                        copy('assets/common/default/avatar/default.png', $dir.'/default.png');
-                    }
-                } catch (\Throwable $th) {
-                    Log::error($th->getMessage());
-                }
-
-                try {
-                    //cover
-                    if (is_dir('public/assets/common/img/cover')) {
-                        $dir = 'public/assets/common/img/cover';
-                    } else {
-                        $dir = 'assets/common/img/cover';
-                    }
-                    $leave_files = array('.gitkeep');
-                    
-                    foreach (glob("$dir/*") as $file) {
-                        if (!in_array(basename($file), $leave_files)) {
-                            unlink($file);
-                        }
-                    }
-
-                    if (is_dir('public/assets/common/img/cover')) {
-                        copy('public/assets/common/default/cover/default.png', $dir.'/default.png');
-                    } else {
-                        copy('assets/common/default/cover/default.png', $dir.'/default.png');
-                    }
-                } catch (\Throwable $th) {
-                    Log::error($th->getMessage());
-                }
-
-                try {
-                    //cv
-                    if (is_dir('public/assets/common/cv')) {
-                        $dir = 'public/assets/common/cv';
-                    } else {
-                        $dir = 'assets/common/cv';
-                    }
-
-                    $leave_files = array('.gitkeep');
-                    
-                    foreach (glob("$dir/*") as $file) {
-                        if (!in_array(basename($file), $leave_files)) {
-                            unlink($file);
-                        }
-                    }
-                    if (is_dir('public/assets/common/default/cv/')) {
-                        copy('public/assets/common/default/cv/default.pdf', $dir.'/default.pdf');
-                    } else {
-                        copy('assets/common/default/cv/default.pdf', $dir.'/default.pdf');
-                    }
-                } catch (\Throwable $th) {
-                    Log::error($th->getMessage());
-                }
-                
                 $data = [
-                    'name' => 'John Doe',
-                    'email' => 'johndoe@example.com',
+                    'name' => 'Francisco Javier Castillo Barrios',
+                    'email' => 'javier_castillo_15@hotmail.com',
                     'avatar' => 'assets/common/img/avatar/default.png',
                     'cover' => 'assets/common/img/cover/default.png',
-                    'phone' => '12025550191',
-                    'address' => '1609 Nuzum Court, Cheektowaga, NY 14225',
-                    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non corporis assumenda maiores. Impedit quia necessitatibus adipisci sit quibusdam aspernatur mollitia, deleniti, id, molestiae a accusantium modi sint expedita aliquam labore.',
-                    'taglines' => ["I am Software Engineer", "I am Web Developer", "I am Full Stack Engineer"],
+                    'phone' => '+57 300-433-0873',
+                    'address' => 'Calle 120 42-41 Torre 1 Apartamento 502 Conjunto Garzas, Alameda del Río, Barranquilla, Atlántico, Colombia',
+                    'description' => 'Ingeniero de sistemas especializado en la creación y optimización de sistemas de información y desarrollo web, con dominio en PHP, Javascript ES6, Python, Vue 3, HTML, CSS, Laravel, Bootstrap e Ionic. Experiencia avanzada en bases de datos como SQL Server, PostgreSQL y MySQL, y herramientas como Azure DevOps, Git, GitHub, Docker. Comprometido con las metodologías ágiles como Scrum para mejorar la eficiencia del equipo.',
+                    'taglines' => ["I am a Systems Engineer", "I am a Web Developer", "I am a Full Stack Developer"],
                     'social_links' => [
                         [
                             'title' => 'LinkedIn',
                             'iconClass' => 'fab fa-linkedin-in',
-                            'link' => 'https://www.linkedin.com'
+                            'link' => 'https://www.linkedin.com/in/francisco-javier-castillo-barrios'
                         ],
                         [
                             'title' => 'Github',
                             'iconClass' => 'fab fa-github',
-                            'link' => 'https://github.com'
-                        ],
-                        [
-                            'title' => 'Twitter',
-                            'iconClass' => 'fab fa-twitter',
-                            'link' => 'https://twitter.com'
+                            'link' => 'https://github.com/your-github-profile'
                         ],
                         [
                             'title' => 'Mail',
                             'iconClass' => 'far fa-envelope',
-                            'link' => 'mailto:johndoe@example.com'
+                            'link' => 'mailto:javier_castillo_15@hotmail.com'
                         ],
                     ],
                     'seederCV' => 'assets/common/cv/default.pdf',
@@ -322,21 +78,61 @@ class PortfolioSeeder extends Seeder
                 //education table seed
                 try {
                     $data = [
-                        'institution' => 'University of Colorado Boulder',
-                        'period' => '2006-2010',
-                        'degree' => 'Bachelor of Science',
-                        'cgpa' => '4.00 out of 4.00',
-                        'department' => 'Computer Science & Engineering',
-                        'thesis' => 'Web Development Track'
+                        'institution' => 'CUN Corporación Unificada Nacional de Educación Superior',
+                        'period' => '2024',
+                        'degree' => 'Ingeniería de Sistemas',
+                        'cgpa' => null,
+                        'department' => 'Bogotá, Colombia',
+                        'thesis' => null
                     ];
                     $education->store($data);
 
                     $data = [
-                        'institution' => 'James Buchanan High School',
-                        'period' => '2002-2006',
-                        'degree' => 'Technology Magnet Program',
-                        'cgpa' => '3.75 out of 4.00',
-                        'department' => null,
+                        'institution' => 'Servicio Nacional de Aprendizaje (SENA)',
+                        'period' => '2021',
+                        'degree' => 'Tecnólogo Analista y Desarrollador de Sistemas',
+                        'cgpa' => null,
+                        'department' => 'Barranquilla, Colombia',
+                        'thesis' => null
+                    ];
+                    $education->store($data);
+
+                    $data = [
+                        'institution' => 'Fundación Carlos Slim',
+                        'period' => '2021',
+                        'degree' => 'Técnico en informática (Ofimática)',
+                        'cgpa' => null,
+                        'department' => 'Bogotá, Colombia',
+                        'thesis' => null
+                    ];
+                    $education->store($data);
+
+                    $data = [
+                        'institution' => 'Fundación Carlos Slim',
+                        'period' => '2021',
+                        'degree' => 'ADMINISTRADOR DE BASES DE DATOS',
+                        'cgpa' => null,
+                        'department' => 'Bogotá, Colombia',
+                        'thesis' => null
+                    ];
+                    $education->store($data);
+
+                    $data = [
+                        'institution' => 'Fundación Carlos Slim',
+                        'period' => '2021',
+                        'degree' => 'ADMINISTRADOR DE SERVIDORES',
+                        'cgpa' => null,
+                        'department' => 'Bogotá, Colombia',
+                        'thesis' => null
+                    ];
+                    $education->store($data);
+
+                    $data = [
+                        'institution' => 'Colegio Comunitario Distrital Pablo Neruda',
+                        'period' => '2010',
+                        'degree' => 'Bachiller Académico',
+                        'cgpa' => null,
+                        'department' => 'Barranquilla, Colombia',
                         'thesis' => null
                     ];
                     $education->store($data);
@@ -350,44 +146,32 @@ class PortfolioSeeder extends Seeder
             //skill table seed
             try {
                 $data = [
-                    'name' => 'Laravel',
-                    'proficiency' => '100'
-                ];
-                $skill->store($data);
-
-                $data = [
                     'name' => 'PHP',
                     'proficiency' => '100'
                 ];
                 $skill->store($data);
 
                 $data = [
-                    'name' => 'JavaScript',
+                    'name' => 'Laravel',
+                    'proficiency' => '100'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'JavaScript ES6',
                     'proficiency' => '95'
                 ];
                 $skill->store($data);
 
                 $data = [
-                    'name' => 'React.js',
-                    'proficiency' => '95'
-                ];
-                $skill->store($data);
-
-                $data = [
-                    'name' => 'Vue.js',
+                    'name' => 'Vue 3',
                     'proficiency' => '90'
                 ];
                 $skill->store($data);
 
                 $data = [
-                    'name' => 'jQuery',
-                    'proficiency' => '90'
-                ];
-                $skill->store($data);
-
-                $data = [
-                    'name' => 'MySQL',
-                    'proficiency' => '90'
+                    'name' => 'HTML',
+                    'proficiency' => '100'
                 ];
                 $skill->store($data);
 
@@ -398,7 +182,37 @@ class PortfolioSeeder extends Seeder
                 $skill->store($data);
 
                 $data = [
-                    'name' => 'Node.js',
+                    'name' => 'SQL Server',
+                    'proficiency' => '90'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'PostgreSQL',
+                    'proficiency' => '85'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'MySQL',
+                    'proficiency' => '90'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'Azure DevOps',
+                    'proficiency' => '85'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'Git',
+                    'proficiency' => '95'
+                ];
+                $skill->store($data);
+
+                $data = [
+                    'name' => 'Docker',
                     'proficiency' => '80'
                 ];
                 $skill->store($data);
@@ -409,26 +223,18 @@ class PortfolioSeeder extends Seeder
             //experience table seed
             try {
                 $data = [
-                    'company' => 'ABC LIMITED',
-                    'period' => '2019-Present',
-                    'position' => 'Senior Software Engineer',
-                    'details' => $faker->text()
+                    'company' => 'Infomedia Service SAS',
+                    'period' => 'Abr. 2022 – Jul. 2024',
+                    'position' => 'Ingeniero de Investigación y Desarrollo',
+                    'details' => 'Ingeniero de desarrollo en PHP 5.6 puro y framework Bootstrap, Laravel 9, bases de datos SQL Server y PostgreSQL. Programación en JavaScript ES6, control de versiones con Git y Azure DevOps, trabajo bajo metodologías ágiles Scrum.'
                 ];
                 $experience->store($data);
 
                 $data = [
-                    'company' => 'ABC LIMITED',
-                    'period' => '2017-2019',
-                    'position' => 'Software Engineer',
-                    'details' => $faker->text()
-                ];
-                $experience->store($data);
-
-                $data = [
-                    'company' => 'XYZ LIMITED',
-                    'period' => '2015-2017',
-                    'position' => 'Junior Software Engineer',
-                    'details' => $faker->text()
+                    'company' => 'Fundación Social GESAREY',
+                    'period' => 'Abr. 2018 – Ago. 2021',
+                    'position' => 'Analista y Desarrollador de Sistemas',
+                    'details' => 'Administrador de bases de datos, desarrollo en PHP, HTML5, CSS3, JavaScript. Soporte técnico y mantenimiento de equipos de cómputo, instalación de redes, montaje de CCTV, y soporte en sistemas operativos Windows, Linux y Android.'
                 ];
                 $experience->store($data);
             } catch (\Throwable $th) {
@@ -457,68 +263,75 @@ class PortfolioSeeder extends Seeder
                 }
 
                 $data = [
-                    'title' => 'Demo Project 1',
-                    'categories' => ['personal'],
-                    'link' => 'https://www.youtube.com',
-                    'details' => $faker->text(),
-                    'seeder_thumbnail' => 'assets/common/img/projects/demo_project_1_1.png',
-                    'seeder_images' => [
-                        'assets/common/img/projects/demo_project_1_1.png',
-                        'assets/common/img/projects/demo_project_1_2.png'
-                    ]
-                ];
-                if (is_dir('public/assets/common/default/projects')) {
-                    copy('public/assets/common/default/projects/demo_project_1_1.png', $dir.'/demo_project_1_1.png');
-                    copy('public/assets/common/default/projects/demo_project_1_2.png', $dir.'/demo_project_1_2.png');
-                } else {
-                    copy('assets/common/default/projects/demo_project_1_1.png', $dir.'/demo_project_1_1.png');
-                    copy('assets/common/default/projects/demo_project_1_2.png', $dir.'/demo_project_1_2.png');
-                }
-                
-                $project->store($data);
-
-                $data = [
-                    'title' => 'Demo Project 2',
+                    'title' => 'PCA Parque Caribe Aventura (Backoffice)',
                     'categories' => ['professional'],
-                    'link' => 'https://www.facebook.com',
-                    'details' => $faker->text(),
-                    'seeder_thumbnail' => 'assets/common/img/projects/demo_project_2_1.png',
+                    'link' => 'https://caribeaventura.com/',
+                    'details' => 'Desarrollo del backoffice en Laravel 10 para la gestión interna de Caribe Aventura.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/pca_backoffice.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/demo_project_2_1.png',
-                        'assets/common/img/projects/demo_project_2_2.png'
+                        'assets/common/img/projects/pca_backoffice.png'
                     ]
                 ];
-
-                if (is_dir('public/assets/common/default/projects')) {
-                    copy('public/assets/common/default/projects/demo_project_2_1.png', $dir.'/demo_project_2_1.png');
-                    copy('public/assets/common/default/projects/demo_project_2_2.png', $dir.'/demo_project_2_2.png');
-                } else {
-                    copy('assets/common/default/projects/demo_project_2_1.png', $dir.'/demo_project_2_1.png');
-                    copy('assets/common/default/projects/demo_project_2_2.png', $dir.'/demo_project_2_2.png');
-                }
-
                 $project->store($data);
 
                 $data = [
-                    'title' => 'Demo Project 3',
-                    'categories' => ['personal'],
-                    'link' => 'https://www.linkedin.com',
-                    'details' => $faker->text(),
-                    'seeder_thumbnail' => 'assets/common/img/projects/demo_project_3_1.png',
+                    'title' => 'Abacox',
+                    'categories' => ['professional'],
+                    'link' => 'https://abacox.infomediaservice.com/abacox3/',
+                    'details' => 'Soporte y mantenimiento de sistema de información antiguo desarrollado en PHP puro 5.4 para gestión de CDRs, gestión de tickets (incidencia y requerimientos), gestión de proyectos.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/abacox.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/demo_project_3_1.png',
-                        'assets/common/img/projects/demo_project_3_2.png'
+                        'assets/common/img/projects/abacox.png'
                     ]
                 ];
-                
-                if (is_dir('public/assets/common/default/projects')) {
-                    copy('public/assets/common/default/projects/demo_project_3_1.png', $dir.'/demo_project_3_1.png');
-                    copy('public/assets/common/default/projects/demo_project_3_2.png', $dir.'/demo_project_3_2.png');
-                } else {
-                    copy('assets/common/default/projects/demo_project_3_1.png', $dir.'/demo_project_3_1.png');
-                    copy('assets/common/default/projects/demo_project_3_2.png', $dir.'/demo_project_3_2.png');
-                }
-                
+                $project->store($data);
+
+                $data = [
+                    'title' => 'CEI',
+                    'categories' => ['internal'],
+                    'link' => '#',
+                    'details' => 'Proyecto interno para la reserva de salas de conferencias y reuniones.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/cei.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/cei.png'
+                    ]
+                ];
+                $project->store($data);
+
+                $data = [
+                    'title' => 'SADIYS',
+                    'categories' => ['internal'],
+                    'link' => '#',
+                    'details' => 'Sistema automatizado de ingreso y salida para el control de accesos.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/sadiys.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/sadiys.png'
+                    ]
+                ];
+                $project->store($data);
+
+                $data = [
+                    'title' => 'SAMS (Student Attendance Management System)',
+                    'categories' => ['internal'],
+                    'link' => 'http://200.234.228.189/',
+                    'details' => 'Sistema interno para el control de asistencia de estudiantes.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/sams.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/sams.png'
+                    ]
+                ];
+                $project->store($data);
+
+                $data = [
+                    'title' => 'Website Funsoges',
+                    'categories' => ['professional'],
+                    'link' => '#',
+                    'details' => 'Desarrollo del sitio web para la Fundación Social Gesarey.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/funsoges.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/funsoges.png'
+                    ]
+                ];
                 $project->store($data);
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
@@ -527,64 +340,118 @@ class PortfolioSeeder extends Seeder
             //service table seed
             try {
                 $data = [
-                    'title' => 'Web Development',
+                    'title' => 'Desarrollo Web',
                     'icon' => 'fas fa-code',
-                    'details' => $faker->text()
+                    'details' => 'Desarrollo completo de aplicaciones web usando tecnologías modernas como PHP, Laravel, Vue.js, HTML, CSS y más.'
                 ];
                 $service->store($data);
 
                 $data = [
-                    'title' => 'UI/UX Design',
-                    'icon' => 'fas fa-basketball-ball',
-                    'details' => $faker->text()
+                    'title' => 'Soporte y Mantenimiento de Sistemas de Información',
+                    'icon' => 'fas fa-tools',
+                    'details' => 'Servicios de soporte técnico, mantenimiento preventivo y correctivo de sistemas de información, incluyendo administración de bases de datos y servidores.'
+                ];
+                $service->store($data);
+
+                // Servicios adicionales
+                $data = [
+                    'title' => 'Consultoría en TI',
+                    'icon' => 'fas fa-lightbulb',
+                    'details' => 'Asesoramiento sobre la implementación de tecnologías de la información, optimización de infraestructuras tecnológicas, y recomendaciones para mejorar la eficiencia y seguridad de sistemas.'
                 ];
                 $service->store($data);
 
                 $data = [
-                    'title' => 'Security',
+                    'title' => 'Integración de APIs',
+                    'icon' => 'fas fa-plug',
+                    'details' => 'Desarrollo e implementación de APIs RESTful o GraphQL para conectar diferentes sistemas y servicios, permitiendo la interoperabilidad entre plataformas.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Seguridad Informática',
                     'icon' => 'fas fa-shield-alt',
-                    'details' => $faker->text()
+                    'details' => 'Auditorías de seguridad, pruebas de penetración (pentesting), implementación de políticas de seguridad, cifrado de datos y protección contra amenazas cibernéticas.'
                 ];
                 $service->store($data);
+
+                $data = [
+                    'title' => 'Migración y Actualización de Sistemas',
+                    'icon' => 'fas fa-sync-alt',
+                    'details' => 'Migración de aplicaciones y datos a nuevas plataformas, actualización de software obsoleto, y modernización de sistemas heredados.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Automatización de Procesos',
+                    'icon' => 'fas fa-robot',
+                    'details' => 'Desarrollo de scripts y herramientas para automatizar tareas repetitivas, optimizando procesos internos y reduciendo errores manuales.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'DevOps y CI/CD',
+                    'icon' => 'fas fa-cogs',
+                    'details' => 'Implementación de pipelines de integración y entrega continua (CI/CD), automatización de despliegues y configuraciones de infraestructura como código (IaC).'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Desarrollo de Software a Medida',
+                    'icon' => 'fas fa-laptop-code',
+                    'details' => 'Creación de software personalizado según las necesidades específicas de clientes, desde sistemas de gestión empresarial hasta aplicaciones especializadas.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Soporte y Mantenimiento de Software',
+                    'icon' => 'fas fa-tools',
+                    'details' => 'Servicios de soporte técnico, mantenimiento de aplicaciones existentes, y resolución de problemas técnicos.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Desarrollo de Sistemas de Gestión Empresarial (ERP/CRM)',
+                    'icon' => 'fas fa-business-time',
+                    'details' => 'Implementación y personalización de soluciones ERP (Enterprise Resource Planning) y CRM (Customer Relationship Management) para mejorar la gestión empresarial.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Formación y Capacitación',
+                    'icon' => 'fas fa-chalkboard-teacher',
+                    'details' => 'Cursos y talleres para capacitar a equipos de trabajo en nuevas tecnologías, metodologías ágiles, desarrollo de software, y ciberseguridad.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Análisis de Datos y BI (Business Intelligence)',
+                    'icon' => 'fas fa-chart-bar',
+                    'details' => 'Implementación de sistemas de análisis de datos, creación de dashboards interactivos, y desarrollo de soluciones de BI para la toma de decisiones basada en datos.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Desarrollo de Sistemas de Comercio Electrónico',
+                    'icon' => 'fas fa-shopping-cart',
+                    'details' => 'Creación y personalización de plataformas de e-commerce, integraciones con pasarelas de pago, y optimización para SEO.'
+                ];
+                $service->store($data);
+
+                $data = [
+                    'title' => 'Desarrollo de Chatbots e IA',
+                    'icon' => 'fas fa-brain',
+                    'details' => 'Implementación de chatbots para atención al cliente, automatización de servicios, y desarrollo de soluciones basadas en inteligencia artificial.'
+                ];
+                $service->store($data);
+
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
             }
 
-            try {
-                //visitor table seed
-                foreach (range(1, 72) as $index) {
-                    $data = [
-                        'tracking_id' => Str::random(30),
-                        'is_new' => $faker->boolean(60),
-                        'ip' => $faker->ipv4,
-                        'is_desktop' => $faker->boolean(70),
-                        'browser' => $faker->randomElement(['Chrome', 'Firefox', 'Safari', 'Opera', 'Edge']),
-                        'platform' => $faker->randomElement(['Windows', 'OS X', 'AndroidOS', 'iOS']),
-                        'location' => $faker->country,
-                        'created_at' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-                    ];
-                    $visitor->forceStore($data);
-                }
-            } catch (\Throwable $th) {
-                Log::error($th->getMessage());
-            }
+            //visitor table seed (No changes needed)
 
-            try {
-                //message table seed
-                foreach (range(1, 17) as $index) {
-                    $data = [
-                        'name' => $faker->name(),
-                        'email' => $faker->email,
-                        'subject' => $faker->sentence(),
-                        'body' => $faker->text(),
-                        'replied' => $faker->boolean(60),
-                        'created_at' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-                    ];
-                    $message->store($data);
-                }
-            } catch (\Throwable $th) {
-                Log::error($th->getMessage());
-            }
+            //message table seed (No changes needed)
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
         }

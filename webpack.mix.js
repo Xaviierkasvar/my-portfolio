@@ -38,6 +38,8 @@ mix.webpackConfig({
     ],
 });
 
+mix.copy('resources/assets/common/img/projects', 'public/assets/common/img/projects');
+
 mix.js('resources/js/client/admin/roots/app.js', 'public/js/client/admin/roots')
     .js('resources/js/client/frontend/roots/projects.js', 'public/js/client/frontend/roots/projects.js')
     .js('resources/js/client/frontend/roots/error.js', 'public/js/client/frontend/roots/error.js')
