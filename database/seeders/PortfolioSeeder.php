@@ -333,6 +333,30 @@ class PortfolioSeeder extends Seeder
                     ]
                 ];
                 $project->store($data);
+
+                $data = [
+                    'title' => 'MGI Frontent',
+                    'categories' => ['professional'],
+                    'link' => 'https://github.com/Xaviierkasvar/mgi-font.git',
+                    'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/mgi-font.png'
+                    ]
+                ];
+                $project->store($data);
+
+                $data = [
+                    'title' => 'MGI Backent',
+                    'categories' => ['professional'],
+                    'link' => 'https://github.com/Xaviierkasvar/mgi-back',
+                    'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/mgi-back.png'   
+                    ]
+                ];
+                $project->store($data);
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
             }
