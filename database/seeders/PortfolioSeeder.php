@@ -51,7 +51,7 @@ class PortfolioSeeder extends Seeder
                     'avatar' => 'assets/common/img/avatar/default.png',
                     'cover' => 'assets/common/img/cover/default.png',
                     'phone' => '+57 300-433-0873',
-                    'address' => 'Calle 120 42-41 Torre 1 Apartamento 502 Conjunto Garzas, Alameda del Río, Barranquilla, Atlántico, Colombia',
+                    'address' => 'Carrera 12D #72-18 Trr 56 Apto 1449 Portal de los manantiales Manzana 1 Soledad - Atlántico',
                     'description' => 'Ingeniero de sistemas especializado en la creación y optimización de sistemas de información y desarrollo web, con dominio en PHP, Javascript ES6, Python, Vue 3, HTML, CSS, Laravel, Bootstrap e Ionic. Experiencia avanzada en bases de datos como SQL Server, PostgreSQL y MySQL, y herramientas como Azure DevOps, Git, GitHub, Docker. Comprometido con las metodologías ágiles como Scrum para mejorar la eficiencia del equipo.',
                     'taglines' => ["I am a Systems Engineer", "I am a Web Developer", "I am a Full Stack Developer"],
                     'social_links' => [
