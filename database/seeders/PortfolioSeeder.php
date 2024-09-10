@@ -339,9 +339,9 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['professional'],
                     'link' => 'https://github.com/Xaviierkasvar/mgi-font.git',
                     'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/mgi.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi-front.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/mgi-font.png'
+                        'assets/common/img/projects/mgi-front.png'
                     ]
                 ];
                 $project->store($data);
@@ -351,7 +351,7 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['professional'],
                     'link' => 'https://github.com/Xaviierkasvar/mgi-back',
                     'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/mgi.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi-back.png',
                     'seeder_images' => [
                         'assets/common/img/projects/mgi-back.png'   
                     ]
