@@ -41,7 +41,100 @@ class PortfolioSeeder extends Seeder
             $message = resolve(MessageInterface::class);
 
             //portfolio config table seed
-            // (No changes necessary for portfolio config data)
+            //template
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__TEMPLATE,
+                'setting_value' => 'procyon',
+                'default_value' => 'procyon',
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            //accent color
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__ACCENT_COLOR,
+                'setting_value' => '#1890ff',
+                'default_value' => '#1890ff',
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            //visibility
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_ABOUT,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SKILL,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_EDUCATION,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_EXPERIENCE,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_PROJECT,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SERVICE,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_CONTACT,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_FOOTER,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_CV,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__VISIBILITY_SKILL_PROFICIENCY,
+                'setting_value' => CoreConstants::TRUE,
+                'default_value' => CoreConstants::TRUE,
+            ];
+            $portfolioConfig->insertOrUpdate($data);
+
+            //header script
+            $data = [
+                'setting_key' => CoreConstants::PORTFOLIO_CONFIG__SCRIPT_HEADER,
+                'setting_value' => '',
+                'default_value' => '',
+            ];
+            $portfolioConfig->insertOrUpdate($data);
 
             //about table seed
             try {
