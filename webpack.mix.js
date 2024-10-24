@@ -29,12 +29,12 @@ mix.webpackConfig({
         ]
     },
     plugins: [
-        new ESLintPlugin({
-            extensions: [`js`, `jsx`],
-            exclude: [
-                'node_modules'
-            ],
-        })
+        // new ESLintPlugin({
+        //     extensions: [`js`, `jsx`],
+        //     exclude: [
+        //         'node_modules'
+        //     ],
+        // })
     ],
 });
 
