@@ -1,3 +1,4 @@
+# For more information: https://laravel.com/docs/sail
 version: '3'
 services:
     laravel.test:
@@ -22,15 +23,6 @@ services:
             - sail
         depends_on:
             - mysql
-        command: |
-            bash -c "apt-get update && \
-               apt-get install -y curl && \
-               curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-               apt-get install -y nodejs && \
-               npm install -g npm@20.12.2 && \
-               # Instalar bun (si es necesario)
-               npm install -g bun"
-
     mysql:
         image: 'mysql:8.0'
         ports:
@@ -56,11 +48,9 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
-
 networks:
     sail:
         driver: bridge
-
 volumes:
     sailmysql:
         driver: local
