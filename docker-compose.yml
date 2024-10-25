@@ -48,6 +48,13 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
+    node:
+        image: node:18  # Cambiar a la versión de Node.js compatible
+        volumes:
+            - '.:/var/www/html'
+        working_dir: /var/www/html
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge
