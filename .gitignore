@@ -1,3 +1,14 @@
+# Ignorar todas las imágenes en projects excepto los archivos que necesitas
+!public/assets/common/img/projects/*
+!public/assets/common/img/projects/.gitkeep
+!public/assets/common/img/projects/*
+
+# Ignorar todos los archivos en cv excepto los archivos que necesitas
+!public/assets/common/cv/*
+!public/assets/common/cv/.gitkeep
+!public/assets/common/cv/*
+
+# Ignorar todas las demás configuraciones innecesarias
 /node_modules
 /public/hot
 /public/storage
@@ -13,24 +24,3 @@ yarn-error.log
 _ide_helper.php
 .phpstorm.meta.php
 storage/installed
-public/js/client
-public/assets/common/img/logo/*
-!public/assets/common/img/logo/.gitkeep
-!public/assets/common/img/logo/default.png
-public/assets/common/img/favicon/*
-!public/assets/common/img/favicon/.gitkeep
-!public/assets/common/img/favicon/default.png
-public/assets/common/img/meta-image/*
-!public/assets/common/img/meta-image/.gitkeep
-public/assets/common/img/avatar/*
-!public/assets/common/img/avatar/.gitkeep
-!public/assets/common/img/avatar/default.png
-public/assets/common/img/cover/*
-!public/assets/common/img/cover/.gitkeep
-!public/assets/common/img/cover/default.png
-public/assets/common/cv/*
-!public/assets/common/cv/.gitkeep
-!public/assets/common/cv/default.png
-public/assets/common/img/projects/*
-!public/assets/common/img/projects/.gitkeep
-public/mix-manifest.json
