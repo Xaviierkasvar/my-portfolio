@@ -450,6 +450,18 @@ class PortfolioSeeder extends Seeder
                     ]
                 ];
                 $project->store($data);
+
+                $data = [
+                    'title' => '99envios',
+                    'categories' => ['professional'],
+                    'link' => 'https://99envios.app/',
+                    'details' => 'Aportando con mi experiencia en el desarrollo backend utilizando el framework Laravel y en el desarrollo frontend empleando React junto con Material UI, logrando soluciones eficientes y visualmente atractivas',
+                    'seeder_thumbnail' => 'assets/common/img/projects/99envios_login.png',
+                    'seeder_images' => [
+                        'assets/common/img/projects/99envios.png'   
+                    ]
+                ];
+                $project->store($data);
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
             }

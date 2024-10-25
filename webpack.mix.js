@@ -39,7 +39,7 @@ mix.webpackConfig({
 });
 
 // Elimina o comenta estas líneas para que Mix no copie automáticamente estas carpetas
-// mix.copy('resources/assets/common/img/projects', 'public/assets/common/img/projects');
+ mix.copy('resources/assets/common/img/projects', 'public/assets/common/img/projects');
 // mix.copy('resources/assets/common/cv', 'public/assets/common/cv');
 
 // mix.js('resources/js/client/admin/roots/app.js', 'public/js/client/admin/roots')
