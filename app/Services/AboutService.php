@@ -467,7 +467,7 @@ class AboutService implements AboutInterface
                 //delete previous cv
                 $oldCVResponse = $this->getAll(['cv', 'id']);
                 try {
-                    if ($oldCVResponse['status'] === CoreConstants::STATUS_CODE_SUCCESS && $oldCVResponse['payload']->cv !== 'assets/common/cv/default.pdf' && file_exists($oldCVResponse['payload']->cv)) {
+                    if ($oldCVResponse['status'] === CoreConstants::STATUS_CODE_SUCCESS && $oldCVResponse['payload']->cv !== 'assets/common/cv/Cv_Ing_Sistemas.pdf' && file_exists($oldCVResponse['payload']->cv)) {
                         unlink($oldCVResponse['payload']->cv);
                     }
                 } catch (\Throwable $th) {
