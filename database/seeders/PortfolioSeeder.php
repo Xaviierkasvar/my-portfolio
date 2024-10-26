@@ -360,9 +360,9 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['professional'],
                     'link' => 'https://caribeaventura.com/',
                     'details' => 'Desarrollo del backoffice en Laravel 10 para la gestión interna de Caribe Aventura.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/pca_backoffice.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/pca_login.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/pca_backoffice.png'
+                        'assets/common/img/projects/abacox.png'
                     ]
                 ];
                 $project->store($data);
@@ -372,9 +372,9 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['professional'],
                     'link' => 'https://abacox.infomediaservice.com/abacox3/',
                     'details' => 'Soporte y mantenimiento de sistema de información antiguo desarrollado en PHP puro 5.4 para gestión de CDRs, gestión de tickets (incidencia y requerimientos), gestión de proyectos.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/abacox.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/abacox_login.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/abacox.png'
+                        'assets/common/img/projects/abacox_login.png'
                     ]
                 ];
                 $project->store($data);
@@ -384,9 +384,9 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['internal'],
                     'link' => '#',
                     'details' => 'Proyecto interno para la reserva de salas de conferencias y reuniones.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/cei.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/cei_login.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/cei.png'
+                        'assets/common/img/projects/cei_login.png'
                     ]
                 ];
                 $project->store($data);
@@ -408,7 +408,7 @@ class PortfolioSeeder extends Seeder
                     'categories' => ['internal'],
                     'link' => 'http://200.234.228.189/',
                     'details' => 'Sistema interno para el control de asistencia de estudiantes.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/sams.png',
+                    'seeder_thumbnail' => 'assets/common/img/projects/sams_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/sams.png'
                     ]

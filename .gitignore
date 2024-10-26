@@ -1,7 +1,7 @@
 # Ignorar todas las imágenes en projects excepto los archivos que necesitas
 !public/assets/common/img/projects/*
 !public/assets/common/img/projects/.gitkeep
-!public/assets/common/img/projects/*
+public/assets/common/img/projects/*
 
 # Ignorar todos los archivos en cv excepto los archivos que necesitas
 !public/assets/common/cv/*
