@@ -359,7 +359,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'PCA Parque Caribe Aventura (Backoffice)',
                     'categories' => ['professional'],
                     'link' => 'https://caribeaventura.com/',
-                    'details' => 'Desarrollo del backoffice en Laravel 10 para la gestión interna de Caribe Aventura.',
+                    'details' => 'Desarrollé un robusto backoffice utilizando Laravel 10, optimizando la gestión interna de Caribe Aventura. Este sistema no solo mejora la eficiencia operativa, sino que también proporciona una interfaz amigable para los usuarios, facilitando la administración de datos y la generación de informes. La implementación se realizó siguiendo patrones de diseño y prácticas recomendadas para garantizar la escalabilidad y mantenibilidad del código.',
                     'seeder_thumbnail' => 'assets/common/img/projects/pca_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/abacox.png'
@@ -371,7 +371,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'Abacox',
                     'categories' => ['professional'],
                     'link' => 'https://abacox.infomediaservice.com/abacox3/',
-                    'details' => 'Soporte y mantenimiento de sistema de información antiguo desarrollado en PHP puro 5.4 para gestión de CDRs, gestión de tickets (incidencia y requerimientos), gestión de proyectos.',
+                    'details' => 'Proporcioné soporte y mantenimiento a un antiguo sistema de información desarrollado en PHP puro 5.4. Este sistema, crucial para la gestión de CDRs y tickets, fue actualizado para mejorar su rendimiento y seguridad. Apliqué buenas prácticas de programación y gestión de cambios para asegurar una transición fluida y eficiente.',
                     'seeder_thumbnail' => 'assets/common/img/projects/abacox_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/abacox_login.png'
@@ -383,7 +383,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'CEI',
                     'categories' => ['internal'],
                     'link' => '#',
-                    'details' => 'Proyecto interno para la reserva de salas de conferencias y reuniones.',
+                    'details' => 'Desarrollé un proyecto interno para la reserva de salas de conferencias y reuniones, optimizando el uso de recursos dentro de la organización. La solución incluye una interfaz intuitiva y un sistema de notificaciones que asegura la gestión efectiva de las reservas.',
                     'seeder_thumbnail' => 'assets/common/img/projects/cei_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/cei_login.png'
@@ -395,7 +395,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'SADIYS',
                     'categories' => ['internal'],
                     'link' => '#',
-                    'details' => 'Sistema automatizado de ingreso y salida para el control de accesos.',
+                    'details' => 'Implementé un sistema automatizado de control de accesos, mejorando significativamente la seguridad y la gestión de entradas y salidas en las instalaciones. La solución incluye un registro detallado de actividades, contribuyendo a la transparencia y seguridad del entorno laboral.',
                     'seeder_thumbnail' => 'assets/common/img/projects/sadiys.png',
                     'seeder_images' => [
                         'assets/common/img/projects/sadiys.png'
@@ -407,7 +407,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'SAMS (Student Attendance Management System)',
                     'categories' => ['internal'],
                     'link' => 'http://200.234.228.189/',
-                    'details' => 'Sistema interno para el control de asistencia de estudiantes.',
+                    'details' => 'Desarrollé un sistema integral para el control de asistencia de estudiantes, proporcionando una herramienta eficiente para la gestión académica. Implementé características como informes personalizados y un sistema de notificaciones que mejora la comunicación entre estudiantes y administradores.',
                     'seeder_thumbnail' => 'assets/common/img/projects/sams_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/sams.png'
@@ -419,7 +419,7 @@ class PortfolioSeeder extends Seeder
                     'title' => 'Website Funsoges',
                     'categories' => ['professional'],
                     'link' => '#',
-                    'details' => 'Desarrollo del sitio web para la Fundación Social Gesarey.',
+                    'details' => 'Diseñé y desarrollé el sitio web para la Fundación Social Gesarey, enfocándome en una presentación atractiva y funcional. La plataforma incluye secciones interactivas que permiten a los usuarios conocer los servicios ofrecidos, facilitando el acceso a información clave.',
                     'seeder_thumbnail' => 'assets/common/img/projects/funsoges.png',
                     'seeder_images' => [
                         'assets/common/img/projects/funsoges.png'
@@ -428,25 +428,25 @@ class PortfolioSeeder extends Seeder
                 $project->store($data);
 
                 $data = [
-                    'title' => 'MGI Frontent',
+                    'title' => 'MGI Frontend',
                     'categories' => ['professional'],
                     'link' => 'https://github.com/Xaviierkasvar/mgi-font.git',
-                    'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/mgi-front.png',
+                    'details' => 'Realicé una prueba técnica desarrollando un módulo de gestión de inventarios. Este proyecto incluye una interfaz responsiva que permite a los usuarios gestionar eficientemente su inventario, implementando principios de usabilidad y accesibilidad.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi_login.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/mgi-front.png'
+                        'assets/common/img/projects/mgi.png'
                     ]
                 ];
                 $project->store($data);
 
                 $data = [
-                    'title' => 'MGI Backent',
+                    'title' => 'MGI Backend',
                     'categories' => ['professional'],
                     'link' => 'https://github.com/Xaviierkasvar/mgi-back',
-                    'details' => 'Prueba Técnica: Desarrollo de un Módulo de Gestión de Inventarios.',
-                    'seeder_thumbnail' => 'assets/common/img/projects/mgi-back.png',
+                    'details' => 'En este proyecto, desarrollé un módulo de gestión de inventarios utilizando Laravel. Implementé buenas prácticas de programación y una arquitectura limpia para asegurar la escalabilidad y mantenibilidad del código. Además, utilicé Swagger para documentar la API de forma exhaustiva, facilitando la comprensión y el uso por parte de otros desarrolladores. La documentación incluye descripciones claras de los endpoints, parámetros de entrada, y ejemplos de respuestas, lo que asegura que cualquier nuevo miembro del equipo pueda integrarse rápidamente y entender cómo interactuar con la API.',
+                    'seeder_thumbnail' => 'assets/common/img/projects/mgi_back.png',
                     'seeder_images' => [
-                        'assets/common/img/projects/mgi-back.png'   
+                        'assets/common/img/projects/mgi_swagger.png'   
                     ]
                 ];
                 $project->store($data);
@@ -455,7 +455,7 @@ class PortfolioSeeder extends Seeder
                     'title' => '99envios',
                     'categories' => ['professional'],
                     'link' => 'https://99envios.app/',
-                    'details' => 'Aportando con mi experiencia en el desarrollo backend utilizando el framework Laravel y en el desarrollo frontend empleando React junto con Material UI, logrando soluciones eficientes y visualmente atractivas',
+                    'details' => 'Aporté mi experiencia en desarrollo backend utilizando Laravel y frontend con React y Material UI. Implementé soluciones eficientes y visualmente atractivas, asegurando que el sistema fuera no solo funcional, sino también fácil de usar para los clientes.',
                     'seeder_thumbnail' => 'assets/common/img/projects/99envios_login.png',
                     'seeder_images' => [
                         'assets/common/img/projects/99envios.png'   
