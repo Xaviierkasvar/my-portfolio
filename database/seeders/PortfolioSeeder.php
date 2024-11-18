@@ -164,7 +164,7 @@ class PortfolioSeeder extends Seeder
                             'link' => 'mailto:javier_castillo_15@hotmail.com'
                         ],
                     ],
-                    'seederCV' => 'assets/common/cv/Cv_Ing_Sistemas.pdf',
+                    'seederCV' => 'assets/common/cv/Francisco_Javier_Castillo_Barrios_CV.pdf',
                 ];
                 $about->store($data);
 
