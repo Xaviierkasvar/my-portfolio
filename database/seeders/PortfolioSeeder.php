@@ -145,7 +145,7 @@ class PortfolioSeeder extends Seeder
                     'cover' => 'assets/common/img/cover/default.png',
                     'phone' => '+57 300-433-0873',
                     'address' => 'Carrera 12D #72-18 Trr 56 Apto 1449 Portal de los manantiales Manzana 1 Soledad - Atlántico',
-                    'description' => 'Ingeniero de sistemas especializado en la creación y optimización de sistemas de información y desarrollo web, con dominio en PHP, Javascript ES6, Python, Vue 3, HTML, CSS, Laravel, Bootstrap e Ionic. Experiencia avanzada en bases de datos como SQL Server, PostgreSQL y MySQL, y herramientas como Azure DevOps, Git, GitHub, Docker. Comprometido con las metodologías ágiles como Scrum para mejorar la eficiencia del equipo.',
+                    'description' => 'Ingeniero de Sistemas especializado en desarrollo de software y aplicaciones web, con sólida experiencia como programador Full Stack. En el desarrollo backend, cuento con conocimientos en PHP, Python, Java, Laravel, Spring Boot, Swagger y gestión de bases de datos como SQLServer, PostgreSQL y MySQL. En el desarrollo frontend, domino JavaScript ES6, Vue 3, React, Angular, HTML, CSS, Bootstrap e Ionic. Familiarizado con metodologías ágiles (Scrum) y herramientas modernas como Azure DevOps, Docker, Git y Postman. Profesional proactivo, ético y orientado al logro, comprometido con la implementación de soluciones innovadoras en el ámbito tecnológico.',
                     'taglines' => ["I am a Systems Engineer", "I am a Web Developer", "I am a Full Stack Developer"],
                     'social_links' => [
                         [
