@@ -9,15 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "barryvdh/laravel-ide-helper": "^2.9",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.9",
         "jackiedo/dotenv-editor": "^1.2",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^8.65",
         "laravel/tinker": "^2.5",
+        "mailersend/laravel-driver": "1.x-dev",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
-        "barryvdh/laravel-ide-helper": "^2.9",
         "stevebauman/location": "^6.1",
         "tymon/jwt-auth": "^1.0"
     },
@@ -32,7 +33,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "extra": {
         "laravel": {

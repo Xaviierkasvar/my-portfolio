@@ -7,6 +7,8 @@ use App\Models\Message;
 use App\Services\Contracts\MessageInterface;
 use Log;
 use Validator;
+use App\Models\About;
+use App\Mail\MailerSendService;
 
 class MessageService implements MessageInterface
 {
@@ -105,11 +107,25 @@ class MessageService implements MessageInterface
                 $result = $this->model->create($newData);
             }
 
+            $mailerSend = new MailerSendService();
+            $about = About::first(); 
+
+            $emailData = [
+                'to_email'   => $about->email,
+                'cc_email'   => 'xaviierkasvar.fjcb@gmail.com',
+                'subject'    => 'Correo enviado desde portafolio: '. $newData['subject'],
+                'body'       => $newData['body'],
+            ];
+            
+            $emailSent = $mailerSend->sendEmail($emailData);
+
             if ($result) {
+
                 return [
                     'message' => isset($data['id']) ? 'Data is successfully updated' : 'Data is successfully saved',
                     'payload' => $result,
-                    'status' => CoreConstants::STATUS_CODE_SUCCESS
+                    'status' => CoreConstants::STATUS_CODE_SUCCESS,
+                    'email_sent' => $emailSent ? 'Correo enviado con éxito.' : 'No se pudo enviar el correo.'
                 ];
             } else {
                 return [

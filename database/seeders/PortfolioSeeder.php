@@ -140,7 +140,7 @@ class PortfolioSeeder extends Seeder
             try {
                 $data = [
                     'name' => 'Francisco Javier Castillo Barrios',
-                    'email' => 'javier_castillo_15@hotmail.com',
+                    'email' => 'javier_castillo_15@hotmail.es',
                     'avatar' => 'assets/common/img/avatar/default.png',
                     'cover' => 'assets/common/img/cover/default.png',
                     'phone' => '+57 300-433-0873',
@@ -161,7 +161,7 @@ class PortfolioSeeder extends Seeder
                         [
                             'title' => 'Mail',
                             'iconClass' => 'far fa-envelope',
-                            'link' => 'mailto:javier_castillo_15@hotmail.com'
+                            'link' => 'mailto:javier_castillo_15@hotmail.es'
                         ],
                     ],
                     'seederCV' => 'assets/common/cv/Francisco_Javier_Castillo_Barrios_CV.pdf',
