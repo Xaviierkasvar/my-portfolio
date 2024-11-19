@@ -9,6 +9,7 @@ use Log;
 use Validator;
 use App\Models\About;
 use App\Mail\MailerSendService;
+use Illuminate\Support\Facades\View;
 
 class MessageService implements MessageInterface
 {
@@ -107,7 +108,20 @@ class MessageService implements MessageInterface
                 $result = $this->model->create($newData);
             }
 
+            $emailBody = View::make('emails.thank_you', [
+                'name' => $newData['name']
+            ])->render();
+            
+            // Prepare email data for sending
+            $emailData = [
+                'to_email' => $newData['email'], // Send the reply to the email provided by the user
+                'subject'  => 'Thank you for reaching out - ' . $newData['subject'],
+                'body'     => $emailBody,
+            ];
+            
+
             $mailerSend = new MailerSendService();
+            $emailSent = $mailerSend->sendEmail($emailData);
             $about = About::first(); 
 
             $emailData = [
